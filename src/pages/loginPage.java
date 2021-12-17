@@ -1,12 +1,10 @@
 package pages;
 
 import javax.swing.*;
-
 import pages.preguntas.tecQ;
-
 import java.awt.event.*;
 
-public class loginPage extends JFrame implements ActionListener {
+public class loginPage extends JFrame implements ActionListener, java.awt.event.ActionListener {
     JLabel labelEnunciado, labelNombre, labelCedula;
     JTextField textFieldNombre, textFieldCedula;
     JButton buttonEvaluar, buttonCancelar;
@@ -15,7 +13,7 @@ public class loginPage extends JFrame implements ActionListener {
 
     public loginPage(int indexador) {
         this.indexadorUsable = indexador;
-        labelEnunciado = new JLabel("INGRESE LOS DATOS DEL ESTUDIANTE 0"+(indexadorUsable+1));
+        labelEnunciado = new JLabel("INGRESE LOS DATOS DEL ESTUDIANTE 0" + (indexadorUsable + 1));
         labelNombre = new JLabel("Nombre:");
         labelCedula = new JLabel("Cedula:");
 
@@ -48,8 +46,8 @@ public class loginPage extends JFrame implements ActionListener {
         setSize(400, 300);
         setVisible(true);
 
-        buttonCancelar.addActionListener(this);
         buttonEvaluar.addActionListener(this);
+        buttonCancelar.addActionListener(this);
     }
 
     public void evaluar() {
@@ -59,7 +57,7 @@ public class loginPage extends JFrame implements ActionListener {
             dispose();
         } else if (textFieldNombre.getText().length() != 0 && textFieldCedula.getText().length() != 0) {
             dispose();
-            tecQ showTecQ = new tecQ(indexadorUsable);
+            tecQ showTecQ = new tecQ();
         }
     }
 
@@ -67,8 +65,8 @@ public class loginPage extends JFrame implements ActionListener {
         dispose();
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
+
         if (e.getSource() == buttonCancelar) {
             cerrar();
         } else {
