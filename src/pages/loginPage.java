@@ -4,7 +4,7 @@ import javax.swing.*;
 import pages.preguntas.tecQ;
 import java.awt.event.*;
 
-public class loginPage extends JFrame implements ActionListener, java.awt.event.ActionListener {
+public class loginPage extends JFrame implements ActionListener{
     JLabel labelEnunciado, labelNombre, labelCedula;
     JTextField textFieldNombre, textFieldCedula;
     JButton buttonEvaluar, buttonCancelar;
